@@ -25,5 +25,12 @@ namespace Archive.CDManagement.Api.Controllers
         {
             return Ok(_cdRepository.GetCDModel(id));
         }
+
+        [HttpPost]
+        public IActionResult AddCD([FromBody] CDModel cd)
+        {
+            _cdRepository.AddCD(cd);
+            return Ok();
+        }
     }
 }

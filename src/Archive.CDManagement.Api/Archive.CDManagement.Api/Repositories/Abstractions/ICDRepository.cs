@@ -11,5 +11,7 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
         CDModel GetCDModel(int id);
         IEnumerable<CDModel> GetCDModelsByTitle(string title);
 
+        void AddCD(CDModel cd);
+
     }
 }

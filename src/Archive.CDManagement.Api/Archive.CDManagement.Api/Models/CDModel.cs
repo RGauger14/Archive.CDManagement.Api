@@ -10,5 +10,9 @@ namespace Archive.CDManagement.Api.Models
     {
         [Key]
         public int Id { get; set; }
+
+        public string Title { get; set; }
+
+        //TODO add shelf location (Look up requirements 532 + 503) 
     }
 }

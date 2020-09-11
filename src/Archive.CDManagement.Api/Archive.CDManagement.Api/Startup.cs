@@ -12,6 +12,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Archive.CDManagement.Api.DbContexts;
+using Archive.CDManagement.Api.Configuration;
 
 namespace Archive.CDManagement.Api
 {
@@ -27,6 +30,9 @@ namespace Archive.CDManagement.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var settings = new MySettings();
+            Configuration.Bind("MySettings", settings);
+            services.AddDbContext<CdDbContext>(opt => opt.UseSqlServer(settings.CDManagementDBConnectionString));
             services.AddControllers();
             services.AddTransient<ICDRepository, CDRepository>();
         }

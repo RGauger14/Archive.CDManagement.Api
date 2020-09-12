@@ -13,6 +13,19 @@ namespace Archive.CDManagement.Api.Models
 
         public string Title { get; set; }
 
-        //TODO add shelf location (Look up requirements 532 + 503) 
+        public string Author { get; set; }
+
+        public string Section { get; set; }
+
+        public int X { get; set; }
+
+        public int Y { get; set; }
+
+        public int Barcode { get; set; }
+
+        public string Description { get; set; }
+
+        public bool OnLoan { get; set; }
+        
     }
 }

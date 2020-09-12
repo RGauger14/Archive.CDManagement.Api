@@ -3,14 +3,16 @@ using Archive.CDManagement.Api.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Archive.CDManagement.Api.Migrations
 {
     [DbContext(typeof(CdDbContext))]
-    partial class CdDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200912090039_RequirementsUpdate")]
+    partial class RequirementsUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

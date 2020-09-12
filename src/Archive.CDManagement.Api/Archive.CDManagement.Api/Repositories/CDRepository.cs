@@ -17,20 +17,33 @@ namespace Archive.CDManagement.Api.Repositories
            _dbContext = dbContext;
         }
 
-        public void AddCD(CDModel cd)
+        public void CreateCD(CDModel cd)
         {
             _dbContext.CDs.Add(cd);
             _dbContext.SaveChanges();
         }
 
-        public CDModel GetCDModel(int id)
+        public void DeleteCD(int id)
+        {
+            var cdToDelete = _dbContext.CDs.First(cd => cd.Id == id);
+            _dbContext.CDs.Remove(cdToDelete);
+            _dbContext.SaveChanges();
+        }
+
+        public CDModel GetCD(int id)
         {
             return _dbContext.CDs.Single(cd => cd.Id == id);
         }
 
-        public IEnumerable<CDModel> GetCDModelsByTitle(string title)
+        public IEnumerable<CDModel> GetAllCds()
         {
-            throw new NotImplementedException();
+            return _dbContext.CDs.AsEnumerable();
+        }
+
+        public void UpdateCD(CDModel cd)
+        {
+            _dbContext.Update(cd);
+            _dbContext.SaveChanges();
         }
     }
 }

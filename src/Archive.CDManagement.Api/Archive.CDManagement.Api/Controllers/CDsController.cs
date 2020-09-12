@@ -20,16 +20,36 @@ namespace Archive.CDManagement.Api.Controllers
             _cdRepository = cdRepository;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetCD(int id)
         {
-            return Ok(_cdRepository.GetCDModel(id));
+            return Ok(_cdRepository.GetCD(id));
+        }
+
+        [HttpGet]
+        public IActionResult GetAllCds()
+        {
+            return Ok(_cdRepository.GetAllCds());
+        }
+
+        [HttpPut]
+        public IActionResult CreateCD([FromBody] CDModel cd)
+        {
+            _cdRepository.CreateCD(cd);
+            return Ok(cd);
         }
 
         [HttpPost]
-        public IActionResult AddCD([FromBody] CDModel cd)
+        public IActionResult UpdateCD([FromBody] CDModel cd)
         {
-            _cdRepository.AddCD(cd);
+            _cdRepository.UpdateCD(cd);
+            return Ok(cd);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteCD(int id)
+        {
+            _cdRepository.DeleteCD(id);
             return Ok();
         }
     }

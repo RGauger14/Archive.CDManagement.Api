@@ -8,10 +8,13 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
 {
     public interface ICDRepository
     {
-        CDModel GetCDModel(int id);
-        IEnumerable<CDModel> GetCDModelsByTitle(string title);
+        CDModel GetCD(int id);
+        IEnumerable<CDModel> GetAllCds();
 
-        void AddCD(CDModel cd);
+        void CreateCD(CDModel cd);
+        void UpdateCD(CDModel cd);
+        void DeleteCD(int id);
+        
 
     }
 }

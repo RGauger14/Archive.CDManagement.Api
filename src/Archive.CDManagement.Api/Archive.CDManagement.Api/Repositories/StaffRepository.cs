@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Archive.CDManagement.Api.Repositories
 {
-    interface RentalRepository
+    internal interface StaffRepository
     {
     }
 }

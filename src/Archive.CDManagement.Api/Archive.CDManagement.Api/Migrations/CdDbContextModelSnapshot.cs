@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Archive.CDManagement.Api.Migrations
 {
-    [DbContext(typeof(CdDbContext))]
+    [DbContext(typeof(CdManagementContext))]
     partial class CdDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

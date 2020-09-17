@@ -11,5 +11,6 @@ namespace Archive.CDManagement.Api.Models
     [ApiController]
     public class ReportModel : ControllerBase
     {
+        //TODO
     }
 }

@@ -10,9 +10,9 @@ namespace Archive.CDManagement.Api.Repositories
 {
     public class CDRepository : ICDRepository
     {
-        private readonly CdDbContext _dbContext;
+        private readonly CdManagementContext _dbContext;
 
-        public CDRepository(CdDbContext dbContext)
+        public CDRepository(CdManagementContext dbContext)
         {
             _dbContext = dbContext;
         }

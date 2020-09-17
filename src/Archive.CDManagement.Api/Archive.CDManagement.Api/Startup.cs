@@ -32,7 +32,7 @@ namespace Archive.CDManagement.Api
         {
             var settings = new MySettings();
             Configuration.Bind("MySettings", settings);
-            services.AddDbContext<CdDbContext>(opt => opt.UseSqlServer(settings.CDManagementDBConnectionString));
+            services.AddDbContext<CdManagementContext>(opt => opt.UseSqlServer(settings.CDManagementDBConnectionString));
             services.AddControllers();
             services.AddTransient<ICDRepository, CDRepository>();
         }

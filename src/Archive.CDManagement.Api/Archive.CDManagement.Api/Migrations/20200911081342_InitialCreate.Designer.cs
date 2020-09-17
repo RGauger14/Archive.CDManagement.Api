@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Archive.CDManagement.Api.Migrations
 {
-    [DbContext(typeof(CdDbContext))]
+    [DbContext(typeof(CdManagementContext))]
     [Migration("20200911081342_InitialCreate")]
     partial class InitialCreate
     {

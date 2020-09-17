@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Archive.CDManagement.Api.Repositories
 {
-    internal interface StaffRepository
+    public class StaffRepository
     {
     }
 }

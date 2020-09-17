@@ -14,7 +14,7 @@ namespace Archive.CDManagement.Api.Repositories
 
         public CDRepository(CdDbContext dbContext)
         {
-           _dbContext = dbContext;
+            _dbContext = dbContext;
         }
 
         public void CreateCD(CDModel cd)
@@ -43,6 +43,12 @@ namespace Archive.CDManagement.Api.Repositories
         public void UpdateCD(CDModel cd)
         {
             _dbContext.Update(cd);
+            _dbContext.SaveChanges();
+        }
+
+        public void CreateCDs(IEnumerable<CDModel> cds)
+        {
+            _dbContext.CDs.AddRange(cds);
             _dbContext.SaveChanges();
         }
     }

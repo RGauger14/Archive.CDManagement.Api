@@ -26,8 +26,5 @@ namespace Archive.CDManagement.Api.Models
         public string Description { get; set; }
 
         public bool OnLoan { get; set; }
-        
     }
 }
-
-

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Archive.CDManagement.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class CDsController : ControllerBase
     {
@@ -20,33 +20,40 @@ namespace Archive.CDManagement.Api.Controllers
             _cdRepository = cdRepository;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("cd/{id}")]
         public IActionResult GetCD(int id)
         {
             return Ok(_cdRepository.GetCD(id));
         }
 
-        [HttpGet]
+        [HttpGet("cds")]
         public IActionResult GetAllCds()
         {
             return Ok(_cdRepository.GetAllCds());
         }
 
-        [HttpPut]
+        [HttpPut("cd")]
         public IActionResult CreateCD([FromBody] CDModel cd)
         {
             _cdRepository.CreateCD(cd);
             return Ok(cd);
         }
 
-        [HttpPost]
+        [HttpPut("cds")]
+        public IActionResult CreateCDs([FromBody] IEnumerable<CDModel> cds)
+        {
+            _cdRepository.CreateCDs(cds);
+            return Ok(cds);
+        }
+
+        [HttpPost("cd")]
         public IActionResult UpdateCD([FromBody] CDModel cd)
         {
             _cdRepository.UpdateCD(cd);
             return Ok(cd);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("cd/{id}")]
         public IActionResult DeleteCD(int id)
         {
             _cdRepository.DeleteCD(id);

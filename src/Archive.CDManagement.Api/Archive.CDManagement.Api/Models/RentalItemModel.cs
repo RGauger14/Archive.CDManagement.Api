@@ -11,7 +11,7 @@ namespace Archive.CDManagement.Api.Models
     public class RentalItemModel 
     {
         [Key]
-        public int RentalItemId { get; set; }
+        public int Id { get; set; }
 
         public int RentalId { get; set; }
 

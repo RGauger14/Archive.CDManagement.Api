@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Archive.CDManagement.Api.Models
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class RentalModel : ControllerBase
+    {
+        public IEnumerable<RentalItemModel> RentalItems { get; set; }
+    }
+}

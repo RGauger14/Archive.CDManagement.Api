@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Archive.CDManagement.Api.Models
 {
-    public class RentalItemModel : ControllerBase
+    public class RentalItemModel 
     {
         [Key]
         public int RentalItemId { get; set; }

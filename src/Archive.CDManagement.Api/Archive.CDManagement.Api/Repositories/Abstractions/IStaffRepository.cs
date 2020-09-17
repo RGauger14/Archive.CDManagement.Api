@@ -12,10 +12,11 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
 
         IEnumerable<StaffModel> GetAllStaff();
 
-        void CreateStaff(CDModel cd);
-
-        void UpdateStaff(CDModel cd);
-
         void DeleteStaff(int id);
+
+        void CreateStaff(StaffModel staff);
+
+        void UpdateStaff(StaffModel staff);
+
     }
 }

@@ -12,6 +12,7 @@ namespace Archive.CDManagement.Api.DbContexts
         public CdManagementContext(DbContextOptions<CdManagementContext> options) : base(options)
         {
         }
+        public DbSet<StaffModel> Staff { get; set; }
 
         public DbSet<CDModel> CDs { get; set; }
 

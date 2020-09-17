@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Archive.CDManagement.Api.Models;
 using Archive.CDManagement.Api.Repositories.Abstractions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,45 +20,37 @@ namespace Archive.CDManagement.Api.Controllers
             _rentalRepository = rentalRepository;
         }
 
-        [HttpGet("cd/{id}")]
-        public IActionResult GetCD(int id)
+        [HttpGet("rental/{id}")]
+        public IActionResult GetRental(int id)
         {
             return Ok(_rentalRepository.GetRental(id));
         }
 
-        [HttpGet("cds")]
-        public IActionResult GetAllCds()
+        [HttpGet("rentals")]
+        public IActionResult GetAllRentals()
         {
-            return Ok(_cdRepository.GetAllCds());
+            return Ok(_rentalRepository.GetAllRentals());
         }
 
-        [HttpPut("cd")]
-        public IActionResult CreateCD([FromBody] CDModel cd)
+        [HttpPut("rental")]
+        public IActionResult CreateRental([FromBody] RentalModel rental)
         {
-            _cdRepository.CreateCD(cd);
-            return Ok(cd);
+            _rentalRepository.CreateRental(rental);
+            return Ok(rental);
         }
 
-        [HttpPut("cds")]
-        public IActionResult CreateCDs([FromBody] IEnumerable<CDModel> cds)
+        [HttpPost("rental")]
+        public IActionResult UpdateRental([FromBody] RentalModel rental)
         {
-            _cdRepository.CreateCDs(cds);
-            return Ok(cds);
+            _rentalRepository.UpdateRental(rental);
+            return Ok(rental);
         }
 
-        [HttpPost("cd")]
-        public IActionResult UpdateCD([FromBody] CDModel cd)
+        [HttpDelete("rental/{id}")]
+        public IActionResult DeleteRental(int id)
         {
-            _cdRepository.UpdateCD(cd);
-            return Ok(cd);
-        }
-
-        [HttpDelete("cd/{id}")]
-        public IActionResult DeleteCD(int id)
-        {
-            _cdRepository.DeleteCD(id);
+            _rentalRepository.DeleteRental(id);
             return Ok();
         }
     }
-}
 }

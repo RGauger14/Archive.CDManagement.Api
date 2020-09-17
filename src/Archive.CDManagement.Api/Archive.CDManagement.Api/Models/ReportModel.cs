@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Archive.CDManagement.Api.Models
 {
-    public class ReportModel : ControllerBase
+    public class ReportModel 
     {
         //TODO
     }

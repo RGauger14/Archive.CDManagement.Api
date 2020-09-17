@@ -35,24 +35,26 @@ namespace Archive.CDManagement.Api.Repositories
             _dbContext.SaveChanges();
         }
 
-        public IEnumerable<RentalModel> GetAllRental()
+        public IEnumerable<RentalModel> GetAllRentals()
         {
             return _dbContext.Rentals.AsEnumerable();
         }
 
-        public RentalModel GetRentals(int id)
+        public RentalModel GetRental(int id)
         {
             return _dbContext.Rentals.Single(rental => rental.Id == id);
         }
 
-        public void RemoveRentalItem(int id)
+        public void RemoveRentalItem(int rentalId, int rentalItemId)
         {
             throw new NotImplementedException();
         }
 
         public void UpdateRental(RentalModel rental)
         {
-            throw new NotImplementedException();
+            _dbContext.Update(rental);
+            _dbContext.SaveChanges();
+
         }
     }
 }

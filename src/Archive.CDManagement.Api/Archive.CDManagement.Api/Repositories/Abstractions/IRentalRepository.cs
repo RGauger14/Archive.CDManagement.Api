@@ -8,10 +8,6 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
 {
     public interface IRentalRepository
     {
-        RentalModel GetRentals(int id);
-
-        IEnumerable<RentalModel> GetAllRental();
-
         void CreateRental(RentalModel rental);
 
         void UpdateRental(RentalModel rental);
@@ -20,6 +16,11 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
 
         void AddRentalItem(RentalItemModel rentalItem);
 
-        void RemoveRentalItem(int id);
+        void RemoveRentalItem(int rentalId, int rentalItemId);
+
+        RentalModel GetRental(int id);
+
+        IEnumerable<RentalModel> GetAllRentals();
+
     }
 }

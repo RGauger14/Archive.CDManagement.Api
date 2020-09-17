@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Archive.CDManagement.Api.Models
 {
-    public class StaffModel : ControllerBase
+    public class StaffModel 
     {
         [Key]
-        public int StaffId { get; set; }
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
 

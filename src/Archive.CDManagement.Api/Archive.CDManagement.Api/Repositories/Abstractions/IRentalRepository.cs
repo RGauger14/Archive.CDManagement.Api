@@ -8,7 +8,7 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
 {
     public interface IRentalRepository
     {
-        RentalModel GetRental(int id);
+        RentalModel GetRentals(int id);
 
         IEnumerable<RentalModel> GetAllRental();
 

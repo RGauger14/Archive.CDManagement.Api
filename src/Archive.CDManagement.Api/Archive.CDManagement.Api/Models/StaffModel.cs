@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Archive.CDManagement.Api.Models
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class StaffModel : ControllerBase
     {
         [Key]

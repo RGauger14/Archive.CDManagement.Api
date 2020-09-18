@@ -26,11 +26,11 @@ namespace Archive.CDManagement.Api.Models
         public string Address { get; set; }
         
         [Required]
-        [StringLength(40)]  //Could use [DataType(EmailAddressAttribute] **Review**
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(12)]
+        [Phone]
         public string MobileNumber { get; set; }
 
         [Required]

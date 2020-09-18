@@ -15,9 +15,9 @@ namespace Archive.CDManagement.Api.Models
         public int Id { get; set; }
 
         public List<RentalItemModel> RentalItems { get; set; }
-        [ForeignKey("Staff")]
 
         [Required]
+        [ForeignKey("Staff")]
         public int StaffId { get; set; }
 
         [Required]

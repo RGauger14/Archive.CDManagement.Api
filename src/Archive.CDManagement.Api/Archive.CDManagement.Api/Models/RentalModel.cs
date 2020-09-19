@@ -27,7 +27,7 @@ namespace Archive.CDManagement.Api.Models
         [DataType(DataType.DateTime)]
         public DateTime DateRented { get; set; }
 
-        [Required]
+         
         [DataType(DataType.DateTime)]
         public DateTime DateReturned { get; set; }
     }

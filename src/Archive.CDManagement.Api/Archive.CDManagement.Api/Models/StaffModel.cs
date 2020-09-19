@@ -14,11 +14,11 @@ namespace Archive.CDManagement.Api.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string LastName { get; set; }
 
         [Required]

@@ -35,6 +35,8 @@ namespace Archive.CDManagement.Api
             services.AddDbContext<CdManagementContext>(opt => opt.UseSqlServer(settings.CDManagementDBConnectionString));
             services.AddControllers();
             services.AddTransient<ICDRepository, CDRepository>();
+            services.AddTransient<IRentalRepository, RentalRepository>();
+            services.AddTransient<IStaffRepository, StaffRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

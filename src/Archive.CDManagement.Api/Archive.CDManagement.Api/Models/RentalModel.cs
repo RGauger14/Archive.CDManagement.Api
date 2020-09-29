@@ -20,15 +20,16 @@ namespace Archive.CDManagement.Api.Models
         [ForeignKey("Staff")]
         public int StaffId { get; set; }
 
-        [Required]
         public StaffModel Staff { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime DateRented { get; set; }
+        
 
-         
         [DataType(DataType.DateTime)]
         public DateTime DateReturned { get; set; }
+
+        
     }
 }

@@ -19,7 +19,22 @@ namespace Archive.CDManagement.Api.Repositories
 
         public void AddRentalItem(RentalItemModel rentalItem)
         {
-            throw new NotImplementedException();
+            var cd = _dbContext.CDs.First(cd => cd.Id == rentalItem.CDId);
+            if(cd.OnLoan)
+            {
+                throw new Exception("CD is already on loan");
+            }
+
+            cd.OnLoan = true;
+
+            var rental = _dbContext.Rentals.First(rental => rental.Id == rentalItem.RentalId);
+            if(rental.RentalItems is null)
+            {
+                rental.RentalItems = new List<RentalItemModel>();
+            }
+
+            rental.RentalItems.Add(rentalItem);
+            _dbContext.SaveChanges();
         }
 
         public void CreateRental(RentalModel rental)

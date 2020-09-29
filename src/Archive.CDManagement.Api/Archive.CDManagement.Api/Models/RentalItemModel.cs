@@ -19,14 +19,12 @@ namespace Archive.CDManagement.Api.Models
         [ForeignKey("Rental")]
         public int RentalId { get; set; }
 
-        [Required]
         public RentalModel Rental { get; set; }
 
         [Required]
         [ForeignKey("CD")]
         public int CDId { get; set; }
 
-        [Required]
         public CDModel CD { get; set; }
 
     }

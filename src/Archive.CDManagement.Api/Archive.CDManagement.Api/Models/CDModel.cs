@@ -43,9 +43,7 @@ namespace Archive.CDManagement.Api.Models
         [Required]
         [StringLength(1000)]
         public string Description { get; set; }
-        
         [Required]
         public bool OnLoan { get; set; }
-        
     }
 }

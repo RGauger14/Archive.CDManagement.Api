@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Archive.CDManagement.Api.DbContexts;
 using Archive.CDManagement.Api.Models;
 using Archive.CDManagement.Api.Repositories.Abstractions;
+using Microsoft.AspNetCore.Builder;
 
 namespace Archive.CDManagement.Api.Repositories
 {
@@ -28,7 +29,7 @@ namespace Archive.CDManagement.Api.Repositories
             cd.OnLoan = true;
 
             var rental = _dbContext.Rentals.First(rental => rental.Id == rentalItem.RentalId);
-            if(rental.RentalItems is null)
+                if(rental.RentalItems is null)
             {
                 rental.RentalItems = new List<RentalItemModel>();
             }
@@ -62,8 +63,13 @@ namespace Archive.CDManagement.Api.Repositories
 
         public void RemoveRentalItem(int rentalId, int rentalItemId)
         {
-            throw new NotImplementedException();
-        }
+            var rental = _dbContext.Rentals.First(rental => rental.Id == rentalId);
+            var rentalItem = rental.RentalItems.First(rentalItem => rentalItem.Id == rentalItemId);
+            var cd = _dbContext.CDs.First(cd => cd.Id == rentalItem.CDId);
+            cd.OnLoan = false;
+            rental.RentalItems.Remove(rentalItem);
+            _dbContext.SaveChanges();
+        }  
 
         public void UpdateRental(RentalModel rental)
         {

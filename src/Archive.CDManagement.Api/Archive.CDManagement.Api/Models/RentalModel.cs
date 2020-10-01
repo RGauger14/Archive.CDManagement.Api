@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Archive.CDManagement.Api.Models
 {
-    public class RentalModel 
+    public class RentalModel
     {
         [Key]
         public int Id { get; set; }
@@ -25,11 +25,8 @@ namespace Archive.CDManagement.Api.Models
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime DateRented { get; set; }
-        
 
         [DataType(DataType.DateTime)]
         public DateTime DateReturned { get; set; }
-
-        
-    }
+        }
 }

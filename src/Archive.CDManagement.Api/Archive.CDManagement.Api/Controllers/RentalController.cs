@@ -59,5 +59,13 @@ namespace Archive.CDManagement.Api.Controllers
             _rentalRepository.AddRentalItem(rentalItem);
             return Ok();
         }
+        [HttpDelete("rental/{rentalId}/rentalItem/{rentalItemId}")]
+        public IActionResult RemoveRentalItem(int rentalId, int rentalItemId)
+        {
+            _rentalRepository.RemoveRentalItem(rentalId, rentalItemId);
+            return Ok();
+        }
+
+
     }
 }

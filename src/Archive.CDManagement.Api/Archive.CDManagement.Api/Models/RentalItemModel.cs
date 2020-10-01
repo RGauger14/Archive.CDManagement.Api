@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Archive.CDManagement.Api.Models
 {
     [Table("RentalItems")]
-    public class RentalItemModel 
+    public class RentalItemModel
     {
         [Key]
         public int Id { get; set; }
@@ -26,6 +26,5 @@ namespace Archive.CDManagement.Api.Models
         public int CDId { get; set; }
 
         public CDModel CD { get; set; }
-
     }
 }

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Archive.CDManagement.Api.Models
 {
-    public class StaffModel 
+    public class StaffModel
     {
         [Key]
         public int Id { get; set; }
@@ -24,7 +18,7 @@ namespace Archive.CDManagement.Api.Models
         [Required]
         [StringLength(25)]
         public string Address { get; set; }
-        
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }

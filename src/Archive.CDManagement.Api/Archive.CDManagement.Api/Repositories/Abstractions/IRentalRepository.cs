@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Archive.CDManagement.Api.Models;
 
 namespace Archive.CDManagement.Api.Repositories.Abstractions
@@ -21,6 +18,5 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
         RentalModel GetRental(int id);
 
         IEnumerable<RentalModel> GetAllRentals();
-
     }
 }

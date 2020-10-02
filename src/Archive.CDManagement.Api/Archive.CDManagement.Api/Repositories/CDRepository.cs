@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Archive.CDManagement.Api.DbContexts;
 using Archive.CDManagement.Api.Models;
 using Archive.CDManagement.Api.Repositories.Abstractions;

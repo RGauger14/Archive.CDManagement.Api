@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Archive.CDManagement.Api.Models;
+﻿using Archive.CDManagement.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Archive.CDManagement.Api.DbContexts
@@ -12,6 +8,7 @@ namespace Archive.CDManagement.Api.DbContexts
         public CdManagementContext(DbContextOptions<CdManagementContext> options) : base(options)
         {
         }
+
         public DbSet<StaffModel> Staff { get; set; }
 
         public DbSet<CDModel> CDs { get; set; }

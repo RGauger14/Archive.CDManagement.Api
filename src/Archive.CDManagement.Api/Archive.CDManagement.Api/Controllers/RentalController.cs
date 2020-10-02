@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Archive.CDManagement.Api.Models;
+﻿using Archive.CDManagement.Api.Models;
 using Archive.CDManagement.Api.Repositories.Abstractions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Archive.CDManagement.Api.Controllers
@@ -59,13 +54,12 @@ namespace Archive.CDManagement.Api.Controllers
             _rentalRepository.AddRentalItem(rentalItem);
             return Ok();
         }
+
         [HttpDelete("rental/{rentalId}/rentalItem/{rentalItemId}")]
         public IActionResult RemoveRentalItem(int rentalId, int rentalItemId)
         {
             _rentalRepository.RemoveRentalItem(rentalId, rentalItemId);
             return Ok();
         }
-
-
     }
 }

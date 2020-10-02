@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Archive.CDManagement.Api.Models
+﻿namespace Archive.CDManagement.Api.Models
 {
-    public class ReportModel 
+    public class ReportModel
     {
         //TODO
     }

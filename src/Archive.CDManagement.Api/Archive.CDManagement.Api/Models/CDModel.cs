@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Archive.CDManagement.Api.Models
 {
     public class CDModel
     {
         [Key]
-
         [Required]
         public int Id { get; set; }
 
@@ -27,7 +22,7 @@ namespace Archive.CDManagement.Api.Models
         public string Section { get; set; }
 
         [Required]
-        [Range(0,1000)]
+        [Range(0, 1000)]
         public int X { get; set; }
 
         [Required]
@@ -43,6 +38,7 @@ namespace Archive.CDManagement.Api.Models
         [Required]
         [StringLength(1000)]
         public string Description { get; set; }
+
         [Required]
         public bool OnLoan { get; set; }
     }

@@ -53,11 +53,11 @@ namespace Archive.CDManagement.Seeder
                 CD = cdToRent,
                 Rental = rental
             };
-            rental.DateRented = DateTime.Now;
+            rental.DateRented = DateTime.Now;       
             rental.Staff = staff;
             rental.RentalItems = new List<RentalItemModel>() { rentalItem };
             cdToRent.OnLoan = true;
-            return rental;
+            return rental; 
         }
     }
 }

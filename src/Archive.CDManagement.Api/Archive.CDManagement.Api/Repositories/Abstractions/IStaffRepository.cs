@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Archive.CDManagement.Api.Models;
 
 namespace Archive.CDManagement.Api.Repositories.Abstractions
@@ -14,5 +17,6 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
         void CreateStaff(StaffModel staff);
 
         void UpdateStaff(StaffModel staff);
+
     }
 }

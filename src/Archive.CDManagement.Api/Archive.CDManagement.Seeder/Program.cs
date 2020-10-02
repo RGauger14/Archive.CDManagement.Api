@@ -8,7 +8,7 @@ namespace Archive.CDManagement.Seeder
 {
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var configuration = BuildConfiguration(args);
             var settings = new MySettings();

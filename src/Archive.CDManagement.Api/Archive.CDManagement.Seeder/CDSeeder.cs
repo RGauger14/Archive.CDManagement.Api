@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Archive.CDManagement.Api.DbContexts;
 using Archive.CDManagement.Api.Models;
-using Archive.CDManagement.Api.Repositories.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Archive.CDManagement.Seeder

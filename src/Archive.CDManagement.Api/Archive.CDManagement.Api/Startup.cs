@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Newtonsoft.Json;
 
 namespace Archive.CDManagement.Api
 {
@@ -26,7 +28,7 @@ namespace Archive.CDManagement.Api
             var settings = new MySettings();
             Configuration.Bind("MySettings", settings);
             services.AddDbContext<CdManagementContext>(opt => opt.UseSqlServer(settings.CDManagementDBConnectionString));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects);
             services.AddTransient<ICDRepository, CDRepository>();
             services.AddTransient<IRentalRepository, RentalRepository>();
             services.AddTransient<IStaffRepository, StaffRepository>();

@@ -4,6 +4,7 @@ using System.Linq;
 using Archive.CDManagement.Api.DbContexts;
 using Archive.CDManagement.Api.Models;
 using Archive.CDManagement.Api.Repositories.Abstractions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Archive.CDManagement.Api.Repositories
 {
@@ -51,12 +52,17 @@ namespace Archive.CDManagement.Api.Repositories
 
         public IEnumerable<RentalModel> GetAllRentals()
         {
-            return _dbContext.Rentals.AsEnumerable();
+            return _dbContext.Rentals.Include(rental => rental.RentalItems)
+                .Include(rental => rental.Staff)
+                .AsEnumerable();
         }
 
         public RentalModel GetRental(int id)
         {
-            return _dbContext.Rentals.Single(rental => rental.Id == id);
+            return _dbContext.Rentals.Include(rental => rental.RentalItems)
+                .ThenInclude(rentalItem => rentalItem.CD)
+                .Include(rental => rental.Staff)
+                .Single(rental => rental.Id == id);
         }
 
         public void RemoveRentalItem(int rentalId, int rentalItemId)

@@ -27,6 +27,13 @@ namespace Archive.CDManagement.Api.Controllers
             return Ok(_rentalRepository.GetAllRentals());
         }
 
+        [HttpGet("rental/{id}/return")]
+        public IActionResult ReturnRental(int id)
+        {
+            _rentalRepository.ReturnRental(id);
+            return Ok();
+        }
+
         [HttpPut("rental")]
         public IActionResult CreateRental([FromBody] RentalModel rental)
         {

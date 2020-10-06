@@ -45,8 +45,25 @@ namespace Archive.CDManagement.Api.Repositories
 
         public void DeleteRental(int id)
         {
-            var rentalToDelete = _dbContext.Rentals.First(rental => rental.Id == id);
+            var rentalToDelete = GetRental(id);
+
+            foreach (var rentalItem in rentalToDelete.RentalItems)
+            {
+                RemoveRentalItem(rentalToDelete.Id, rentalItem.Id);
+            }
+
             _dbContext.Rentals.Remove(rentalToDelete);
+            _dbContext.SaveChanges();
+        }
+
+        public void ReturnRental(int rentalId)
+        {
+            var rental = GetRental(rentalId);
+            foreach (var rentalItem in rental.RentalItems)
+            {
+                rentalItem.CD.OnLoan = false;
+            }
+            rental.DateReturned = DateTime.Now;
             _dbContext.SaveChanges();
         }
 
@@ -67,7 +84,7 @@ namespace Archive.CDManagement.Api.Repositories
 
         public void RemoveRentalItem(int rentalId, int rentalItemId)
         {
-            var rental = _dbContext.Rentals.First(rental => rental.Id == rentalId);
+            var rental = GetRental(rentalId);
             var rentalItem = rental.RentalItems.First(rentalItem => rentalItem.Id == rentalItemId);
             var cd = _dbContext.CDs.First(cd => cd.Id == rentalItem.CDId);
             cd.OnLoan = false;

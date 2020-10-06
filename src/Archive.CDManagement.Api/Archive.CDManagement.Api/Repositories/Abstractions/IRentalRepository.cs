@@ -18,5 +18,7 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
         RentalModel GetRental(int id);
 
         IEnumerable<RentalModel> GetAllRentals();
+
+        void ReturnRental(int rentalId);
     }
 }

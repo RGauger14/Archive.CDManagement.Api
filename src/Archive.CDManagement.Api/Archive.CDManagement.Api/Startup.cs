@@ -32,6 +32,7 @@ namespace Archive.CDManagement.Api
             services.AddTransient<ICDRepository, CDRepository>();
             services.AddTransient<IRentalRepository, RentalRepository>();
             services.AddTransient<IStaffRepository, StaffRepository>();
+            services.AddTransient<IReportRepository, ReportRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

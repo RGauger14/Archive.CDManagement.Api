@@ -43,6 +43,8 @@ namespace Archive.CDManagement.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseExceptionHandler("/error");
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

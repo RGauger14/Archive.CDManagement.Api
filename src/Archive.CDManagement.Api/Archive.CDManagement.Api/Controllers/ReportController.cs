@@ -25,5 +25,19 @@ namespace Archive.CDManagement.Api.Controllers
         {
             return Ok(_reportRepository.AllCDCount());
         }
+
+        [HttpGet("rentalreport")]
+        public IActionResult GetRentalReport([FromQuery] int staffId, [FromQuery] int cdId)
+        {
+            return Ok(_reportRepository.GetRentalCsvReport(staffId, cdId));
+        }
+
+        [HttpGet("cdcountreport")]
+        public IActionResult GetCdCountReport()
+        {
+            return Ok(_reportRepository.GetCdCountCsvReport());
+        }
+
+
     }
 }

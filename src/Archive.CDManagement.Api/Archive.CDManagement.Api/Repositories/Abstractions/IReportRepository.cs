@@ -12,5 +12,7 @@ namespace Archive.CDManagement.Api.Repositories.Abstractions
         CDRentedModel SingleCDCount(int id);
 
         IEnumerable<CDRentedModel> AllCDCount();
+        string GetRentalCsvReport(int staffId, int cdId);
+        string GetCdCountCsvReport();
     }
 }

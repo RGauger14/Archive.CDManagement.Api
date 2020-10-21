@@ -41,5 +41,9 @@ namespace Archive.CDManagement.Api.Models
 
         [Required]
         public bool OnLoan { get; set; }
+
+        public string ThumbnailFilePath { get; set; }
+
+        public string ThumbnailFileName { get; set; }
     }
 }

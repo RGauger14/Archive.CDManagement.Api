@@ -79,7 +79,7 @@ namespace Archive.CDManagement.Api.Repositories
             return _dbContext.Rentals.Include(rental => rental.RentalItems)
                 .ThenInclude(rentalItem => rentalItem.CD)
                 .Include(rental => rental.Staff)
-                .Single(rental => rental.Id == id);
+                .SingleOrDefault(rental => rental.Id == id);
         }
 
         public void RemoveRentalItem(int rentalId, int rentalItemId)
